@@ -1,0 +1,1 @@
+﻿ALTER TABLE [dbo].[Positions] DROP CONSTRAINT PK_POSITIONS;

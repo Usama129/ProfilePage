@@ -1,0 +1,28 @@
+﻿.title {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.workplace {
+}
+
+
+.duration {
+    float: left;
+}
+
+.loc {
+    float: left;
+}
+
+.detail {
+    display: inline-block
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}

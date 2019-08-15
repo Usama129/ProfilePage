@@ -1,0 +1,39 @@
+﻿.Head {
+    width: 700px;
+    height: 250px;  
+    margin: 0 auto;
+}
+
+.Icon {
+    float: left;
+    border-radius: 50%;
+}
+
+.Tags {
+    float: left;
+    margin-left: 30px;
+}
+
+.name {
+    font-size: 40px;
+}
+
+.headtitle {
+    display: block;
+    font-size: 25px;
+}
+
+.Location {
+    float: left;
+    font-size: 20px
+}
+
+.Specialty {
+    float: right;
+    font-size: 20px;
+}
+
+.locspe {
+    display: inline-block
+}
+
