@@ -2,6 +2,7 @@
     width: 700px;
     height: 250px;  
     margin: 0 auto;
+    
 }
 
 .Icon {
@@ -36,4 +37,16 @@
 .locspe {
     display: inline-block
 }
+
+.tag {
+    float: left;
+}
+
+.value {
+    float: left;
+}
+
+.pre {display: inline-block}
+
+.edu {display: block}
 

@@ -13,5 +13,13 @@ code {
   border-color: #1861ac;
 }
 
+.heading{
+    float: left
+}
+
+.add {
+    float: right
+}
+
 
 

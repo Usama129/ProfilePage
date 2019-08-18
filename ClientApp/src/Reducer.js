@@ -13,11 +13,13 @@ const reducer = (state = initialState, action) => {
                 ...state, user: action.data
             }
             break;
-        case 'UPDATE_DATA':           
+        case 'UPDATE_DATA':
             const temp = { ...state.user, ...action.data }
             return {
                 ...state, user: temp
             }
+            break;
+       
         default:
             return {
                 ...state

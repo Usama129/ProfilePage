@@ -13,6 +13,7 @@ using TypeMerger;
 
 namespace dotnetProfile.Controllers
 {   
+   
     [ApiController]
     public class CounterController : ControllerBase
     {
@@ -22,6 +23,7 @@ namespace dotnetProfile.Controllers
             _db = db;
         }
 
+        
         [HttpGet]
         [Route("api/user/{userID}")]
         public Profile getUser(String userID)
@@ -30,6 +32,7 @@ namespace dotnetProfile.Controllers
             
         }
 
+       
         [HttpPost]
         [Route("api/user/set")]
         public int setUser([FromBody]Profile p)
@@ -48,11 +51,52 @@ namespace dotnetProfile.Controllers
             return 1;
         }
 
+       
         [HttpGet]
-        [Route("api/user/{userID}/positions")]
-        public IEnumerable<Position> getUserPositions(String userID)
+        [Route("api/user/{userID}/positions/{type}")]
+        public IEnumerable<Position> getUserPositions(string userID, string type)
         {
-            return _db.Positions.Where(x => x.userID == userID).ToList();
+            if (type == "exp")
+                return _db.Positions.Where(x => x.userID == userID && x.Type == "Experience").ToList();
+            if (type == "edu")
+                return _db.Positions.Where(x => x.userID == userID && x.Type == "Education").ToList();
+            else
+                return null;
+        }
+
+        [HttpPost]
+        [Route("api/user/setposition")]
+        public int setPosition([FromBody]Position p)
+        {
+            var entry = _db.Positions.Find(p.ID);
+            entry.Title = p.Title;
+            entry.Workplace = p.Workplace;
+            entry.Location = p.Location;
+            entry.StartTime = p.StartTime;
+            entry.EndTime = p.EndTime;
+            entry.Detail = p.Detail;
+            _db.Positions.Update(entry);
+            _db.SaveChanges();
+            return 1;
+        }
+
+
+        [HttpPost]
+        [Route("api/user/deleteposition")]
+        public int deletePosition([FromBody]Position p) {
+            var entry = _db.Positions.Find(p.ID);
+            _db.Positions.Remove(entry);
+            _db.SaveChanges();
+            return 1;
+        }
+
+        [HttpPost]
+        [Route("api/user/addposition")]
+        public int addPosition([FromBody]Position p)
+        {
+            _db.Positions.Add(p);
+            _db.SaveChanges();
+            return 1;
         }
 
         [HttpPost]

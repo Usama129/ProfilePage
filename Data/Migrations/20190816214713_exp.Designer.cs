@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using dotnetProfile.Data;
 
 namespace dotnetProfile.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190816214713_exp")]
+    partial class exp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -244,35 +246,6 @@ namespace dotnetProfile.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("dotnetProfile.Models.Position", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Detail");
-
-                    b.Property<string>("EndTime");
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("Location");
-
-                    b.Property<string>("StartTime");
-
-                    b.Property<string>("Title");
-
-                    b.Property<string>("Type");
-
-                    b.Property<string>("Workplace");
-
-                    b.Property<string>("userID");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("dotnetProfile.Models.Profile", b =>

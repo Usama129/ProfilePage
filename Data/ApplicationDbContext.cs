@@ -22,5 +22,7 @@ namespace dotnetProfile.Data
 
         public DbSet<Profile> userProfiles { get; set; }
         public DbSet<Position> Positions { get; set; }
+
+        
     }
 }

@@ -1,28 +1,82 @@
-﻿.title {
+﻿.position {
+    display: inline-block;
+    width: 100%;
+    
+}
+
+a.btn {
+    display: inline-block;
+    padding: 0.25em 0.8em;
+    
+    margin: 0 0.3em 0.3em 0;
+   
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: #464E51;
+    text-align: center;
+    transition: all 0.2s;
+    float: right
+}
+
+    a.btn:hover {
+        color: #C2C5CC;
+        background-color: #FFFFFF;
+    }
+
+@media all and (max-width:30em) {
+     a.btn {
+        display: block;
+        margin: 0.4em auto;
+      
+    }
+}
+
+.img {
+    float: right;
+    clear: right;
+}
+
+.title {
     font-size: 19px;
     font-weight: bold;
+    display: inline-block
 }
 
 .workplace {
+   
+   display: block
 }
 
+
+.speloc {
+    display: block
+}
 
 .duration {
     float: left;
 }
 
 .loc {
-    float: left;
+    float: right
 }
 
 .detail {
-    display: inline-block
+    clear: left
 }
 
 .left {
-    float: left;
+    float: left
 }
 
 .right {
-    float: right;
+    float: right
 }
+
+textarea {
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 100px;
+}
+

@@ -68,8 +68,14 @@ class Head extends Component {
                             propName='specialty'
                        />
                     </div>
-                    <p className="edu">Education</p>
-                    <p className="pre">Previous</p>
+                    <div className="edu">
+                        <p className="tag">Education:&nbsp;</p>
+                        <p className="value">{this.props.education}</p>
+                    </div>
+                    <div className="pre">
+                        <p className="tag">Previous:&nbsp;</p> 
+                        <p className="value">{this.props.previous}</p>
+                    </div>
                 </div>
                 
             </div>
@@ -83,7 +89,9 @@ const mapStateToProps = function (state) {
         title: state.user.title,
         location: state.user.location,
         specialty: state.user.specialty,
-        userID: state.user.userID
+        userID: state.user.userID,
+        previous: state.user.previous,
+        education: state.user.education
     }
 }
 
